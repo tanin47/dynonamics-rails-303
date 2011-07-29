@@ -38,9 +38,11 @@ class DynonamicsClient
         http = Net::HTTP.new(parsed_url.host,parsed_url.port)
         http.read_timeout = 10
         response = http.post(parsed_url.path,nvp)
-
+        
+        return "#{response}"
+        
       rescue Exception=>e
-        puts "Dynonamics error: #{e}\n" if ENV['DYNONAMICS_DEBUG']
+        return "#{e} #{e.backtrace.join("\n")}"
       end
       
     end
