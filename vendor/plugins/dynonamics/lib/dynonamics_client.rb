@@ -39,7 +39,7 @@ class DynonamicsClient
         http.read_timeout = 10
         response = http.post(parsed_url.path,nvp)
         
-        return "#{response}"
+        return "#{response.inspect}"
         
       rescue Exception=>e
         return "#{e} #{e.backtrace.join("\n")}"

@@ -24,3 +24,6 @@ DynonamicsRails303::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+ENV['DYNONAMICS_DYNO_URL'] = "http://localhost:2999/dynologger/udjwKubBhx"
+ENV['DYNONAMICS_TEST_MODE'] = "true"
+
