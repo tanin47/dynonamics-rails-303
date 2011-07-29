@@ -3,9 +3,9 @@ class DynonamicsClient
   
   def self.url
     if ENV['STAGING']
-      ENV['DYNONAMICS_STAGING_DYNO_URL']
+      return ENV['DYNONAMICS_STAGING_DYNO_URL']
     else
-      ENV['DYNONAMICS_DYNO_URL']
+      return ENV['DYNONAMICS_DYNO_URL']
     end
   end
   
