@@ -1,14 +1,25 @@
 class DynonamicsClient
   
+  
+  def self.url
+    if ENV['STAGING']
+      ENV['DYNONAMICS_STAGING_DYNO_URL']
+    else
+      ENV['DYNONAMICS_DYNO_URL']
+    end
+  end
+  
   def self.submit_dyno_time(data)
-    if ENV['DYNONAMICS_DYNO_URL']
-      submit(ENV['DYNONAMICS_DYNO_URL'],data)
+    
+    
+    if url
+      submit(url,data)
     end
   end
   
   def self.submit_worker_time(data)
-    if ENV['DYNONAMICS_WORKER_URL']
-      submit(ENV['DYNONAMICS_WORKER_URL'],data)
+    if url
+      submit(url,data)
     end
   end
   
