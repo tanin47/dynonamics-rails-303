@@ -21,7 +21,6 @@ if defined? ActionController
         DynonamicsClient.submit_dyno_time(data)
       end
       
-      
       return v
     end
       
